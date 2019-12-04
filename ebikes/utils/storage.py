@@ -9,5 +9,5 @@ def save_corlysis(temperature, humidity, loudness, gases):
     payload_loud = "Loudness, type=signal value=" + loudness + "\n"
     payload_gas = "Gases, type=gases value=" + gases + "\n"
     payload = payload_temp + payload_hum + payload_loud + payload_gas
-    r = requests.post(url, params=params, data=payload)
+    requests.post(url, params=params, data=payload)
 

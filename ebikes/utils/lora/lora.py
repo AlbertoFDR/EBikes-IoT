@@ -1,3 +1,4 @@
+import array
 from typing import Tuple
 
 import ebikes.utils.lora.rfm as pyrfm
@@ -24,12 +25,12 @@ class LoraEndpoint:
             self.ll.setFrequency(frequency)
             self.ll.setTxPower(tx_power)
 
-    def read(self) -> Tuple[bytes, bytes]:
+    def read(self) -> bytes:
         if self.ll.waitRX(timeout=3):
             data = self.ll.recv()
-            header = data[0:4]
+            # header = data[0:4]
             msg = data[4:]
-            return header, msg
+            return array.array('B', msg).tostring()
 
     def write_string(self, text: str) -> None:
         self.ll.sendStr(text)
