@@ -1,6 +1,6 @@
 from typing import Tuple
 
-import ebikes.utils.lora.lib as pyrfm
+import ebikes.utils.lora.rfm as pyrfm
 
 conf = {
     'll': {
