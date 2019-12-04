@@ -1,3 +1,8 @@
+certifi==2019.11.28
+chardet==3.0.4
 grove.py==0.6
+idna==2.8
+requests==2.22.0
 seeed-python-dht==0.0.2
 smbus2==0.3.0
+urllib3==1.25.7
