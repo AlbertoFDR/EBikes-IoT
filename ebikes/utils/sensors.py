@@ -1,6 +1,7 @@
 from typing import Tuple
 
 import seeed_dht
+from grove.adc import ADC
 
 
 class WeatherSensor:
@@ -10,3 +11,14 @@ class WeatherSensor:
     @property
     def value(self) -> Tuple[float, float]:
         return self.sensor.read()
+
+
+class GroveLoudnessSensor:
+
+    def __init__(self, channel):
+        self.channel = channel
+        self.adc = ADC()
+
+    @property
+    def value(self):
+        return self.adc.read(self.channel)
