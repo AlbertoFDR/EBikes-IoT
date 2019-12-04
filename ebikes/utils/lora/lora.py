@@ -1,5 +1,4 @@
 import array
-from typing import Tuple
 
 import ebikes.utils.lora.rfm as pyrfm
 
