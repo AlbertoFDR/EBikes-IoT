@@ -1,6 +1,6 @@
 import array
 
-import ebikes.utils.lora.rfm as pyrfm
+import utils.lora.rfm as pyrfm
 
 conf = {
     'll': {
