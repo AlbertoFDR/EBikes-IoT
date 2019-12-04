@@ -13,8 +13,7 @@ class WeatherSensor:
         return self.sensor.read()
 
 
-class GroveLoudnessSensor:
-
+class LoudnessSensor:
     def __init__(self, channel):
         self.channel = channel
         self.adc = ADC()
@@ -22,3 +21,14 @@ class GroveLoudnessSensor:
     @property
     def value(self):
         return self.adc.read(self.channel)
+
+
+class GasSensorMQ2:
+    def __init__(self, channel):
+        self.channel = channel
+        self.adc = ADC()
+
+    @property
+    def MQ2(self):
+        value = self.adc.read(self.channel)
+        return value
