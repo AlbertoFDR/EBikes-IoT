@@ -10,6 +10,9 @@ class WeatherSensor:
 
     @property
     def value(self) -> Tuple[float, float]:
+        """
+        :return: (humidty, temperature)
+        """
         return self.sensor.read()
 
 
@@ -29,6 +32,5 @@ class GasSensorMQ2:
         self.adc = ADC()
 
     @property
-    def MQ2(self):
-        value = self.adc.read(self.channel)
-        return value
+    def value(self):
+        return self.adc.read(self.channel)
