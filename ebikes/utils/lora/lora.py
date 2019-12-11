@@ -1,6 +1,6 @@
 import array
 
-import utils.lora.rfm as pyrfm
+from . import rfm as pyrfm
 
 conf = {"ll": {"type": "rfm95"}, "pl": {"type": "serial_seed", "port": "/dev/serial0"}}
 
