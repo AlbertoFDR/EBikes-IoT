@@ -1,14 +1,15 @@
 import json
 from typing import Dict
 
-TEMPERATURE_FIELD = "TEMPERATURE"
-HUMIDITY_FIELD = "HUMIDITY"
-LOUDNESS_FIELD = "LOUDNESS"
-GAS_FIELD = "GAS"
-GPS_FIELD = "GPS"
+TEMPERATURE_FIELD = "temperature"
+HUMIDITY_FIELD = "humidity"
+LOUDNESS_FIELD = "loudness"
+GAS_FIELD = "gas"
+LATITUDE_FIELD = "latitude"
+LONGITUDE_FIELD = "longitude"
 
 
-def dump_sensor_data(sensor_data: Dict) -> bytes:
+def dump_sensor_data(sensor_data: Dict) -> str:
     return json.dumps(sensor_data)
 
 

@@ -31,15 +31,16 @@ if __name__ == "__main__":
         loudness = loudness_sensor.value
         print(f"Loudness: {loudness}")
 
-        gps = None  # todo: get gps data (lon,lat)
-        print(f"GPS: {gps}")
+        latitude, longitude = (None, None)  # todo: get gps data (lon,lat)
+        print(f"GPS: {(latitude, longitude)}")
         print("All data got from sensors [OK]")
         sensor_data = {
             prot.HUMIDITY_FIELD: humidity,
             prot.TEMPERATURE_FIELD: temperature,
             prot.GAS_FIELD: gas,
             prot.LOUDNESS_FIELD: loudness,
-            prot.GPS_FIELD: gps
+            prot.LATITUDE_FIELD: latitude,
+            prot.LONGITUDE_FIELD: longitude
         }
         encoded_data = prot.dump_sensor_data(sensor_data)
         print(f"JSON data encoded: {encoded_data}")
