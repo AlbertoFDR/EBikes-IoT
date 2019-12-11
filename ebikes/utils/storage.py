@@ -11,6 +11,12 @@ def save_corlysis(temperature, humidity, loudness, gases, latitude, longitude):
     payload_lat = "Latitude,type=latitude value=" + str(latitude) + "\n"
     payload_lon = "Longitude,type=longitude value=" + str(longitude) + "\n"
 
-    payload = payload_temp + payload_hum + payload_loud + payload_gas + payload_lat + payload_lon
+    payload = (
+        payload_temp
+        + payload_hum
+        + payload_loud
+        + payload_gas
+        + payload_lat
+        + payload_lon
+    )
     requests.post(url, params=params, data=payload)
-

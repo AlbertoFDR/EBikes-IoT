@@ -1,5 +1,5 @@
-from utils.lora.lora import LoraEndpoint
-from utils.storage import save_corlysis
+from ebikes.utils.lora.lora import LoraEndpoint
+from ebikes.utils.storage import save_corlysis
 
 if __name__ == "__main__":
     print("==================== CLIENT EBIKES ===================== \n")

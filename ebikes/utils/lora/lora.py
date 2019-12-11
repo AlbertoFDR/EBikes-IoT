@@ -2,19 +2,13 @@ import array
 
 import utils.lora.rfm as pyrfm
 
-conf = {
-    'll': {
-        'type': 'rfm95'
-    },
-    'pl': {
-        'type': 'serial_seed',
-        'port': '/dev/serial0'
-    }
-}
+conf = {"ll": {"type": "rfm95"}, "pl": {"type": "serial_seed", "port": "/dev/serial0"}}
 
 
 class LoraEndpoint:
-    def __init__(self, modem="Bw125Cr45Sf128", preamble_length=8, frequency=433, tx_power=13):
+    def __init__(
+        self, modem="Bw125Cr45Sf128", preamble_length=8, frequency=433, tx_power=13
+    ):
         self.ll = pyrfm.getLL(conf)
         if self.ll.setOpModeSleep(True, True):
             self.ll.setFiFo()
@@ -29,7 +23,7 @@ class LoraEndpoint:
             data = self.ll.recv()
             # header = data[0:4]
             msg = data[4:]
-            return array.array('B', msg).tostring()
+            return array.array("B", msg).tostring()
 
     def write_string(self, text: str) -> None:
         self.ll.sendStr(text)
