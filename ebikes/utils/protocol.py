@@ -9,7 +9,7 @@ GPS_FIELD = "GPS"
 
 
 def dump_sensor_data(sensor_data: Dict) -> bytes:
-    return json.dumps(sensor_data).encode()
+    return json.dumps(sensor_data)
 
 
 def load_data_sensor(data: bytes) -> Dict:

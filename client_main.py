@@ -44,7 +44,7 @@ if __name__ == "__main__":
         encoded_data = prot.dump_sensor_data(sensor_data)
         print(f"JSON data encoded: {encoded_data}")
         print(f"Sending data to Lora Endpoint...")
-        lora_endpoint.write(encoded_data)
+        lora_endpoint.write_string(encoded_data)
         print(f"Data sent [OK]")
 
         print(f"Sleeping {SAMPLING_FREQUENCY} seconds...")
