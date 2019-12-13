@@ -17,9 +17,8 @@ if __name__ == "__main__":
             encoded_data = lora.read()
             print(f"Encoded data received: {encoded_data}")
             decoded_data = load_data_sensor(encoded_data)
-            print("Storage in Corlysis!")
-            #Data to save temperature, humidity, loudness, gases, latitude, longitude
-            #save_corlysis(msg)
+            print("Data stored!")
+            storage.store_data(decoded_data)
             print("Data saved")
     except:
         storage.close()
