@@ -9,7 +9,7 @@ from ebikes.utils.lora import lora
 
 load_dotenv()
 
-SAMPLING_FREQUENCY = os.getenv("SAMPLING_FREQUENCY")
+SAMPLING_FREQUENCY = int(os.getenv("SAMPLING_FREQUENCY"))
 
 WEATHER_SENSOR_DHT = os.getenv("WEATHER_SENSOR_DHT")
 WEATHER_SENSOR_PIN = int(os.getenv("WEATHER_SENSOR_PIN"))
