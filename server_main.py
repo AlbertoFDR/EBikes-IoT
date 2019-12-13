@@ -4,7 +4,7 @@ from ebikes.utils.storage import Storage
 import os
 
 STORAGE_HOST = os.getenv("STORAGE_HOST")
-STORAGE_PORT = os.getenv("STORAGE_PORT")
+STORAGE_PORT = int(os.getenv("STORAGE_PORT"))
 
 if __name__ == "__main__":
     print("==================== CLIENT EBIKES ===================== \n")
