@@ -1,22 +1,14 @@
-import requests
+import paho.mqtt.client as mqtt
 
 
-def save_corlysis(temperature, humidity, loudness, gases, latitude, longitude):
-    url = "https://corlysis.com:8086/write"
-    params = {"db": "ebikes-iot", "u": "token", "p": "15b6a2088bbd8f1d3ed3449f4495c394"}
-    payload_temp = "Temperature,type=celsius value=" + str(temperature) + "\n"
-    payload_hum = "Humidity,type=percentage value=" + str(humidity) + "\n"
-    payload_loud = "Loudness,type=loudness value=" + str(loudness) + "\n"
-    payload_gas = "Gases,type=gas value=" + str(gases) + "\n"
-    payload_lat = "Latitude,type=latitude value=" + str(latitude) + "\n"
-    payload_lon = "Longitude,type=longitude value=" + str(longitude) + "\n"
+class Storage:
+    def __init__(self, host, port):
+        self.mqttc = mqtt.Client()
+        self.mqttc.connect(host, port=port, keepalive=60)
 
-    payload = (
-        payload_temp
-        + payload_hum
-        + payload_loud
-        + payload_gas
-        + payload_lat
-        + payload_lon
-    )
-    requests.post(url, params=params, data=payload)
+    def store_data(self, data):
+        self.mqttc.reconnect()
+        self.mqttc.publish(topic="v1/devices/me/telemetry", payload=data)
+
+    def close(self):
+        self.mqttc.disconnect()
