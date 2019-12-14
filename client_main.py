@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 
 from ebikes.utils import protocol as prot
 from ebikes.utils import sensors
+from ebikes.utils.fake_gps import gps
 from ebikes.utils.lora import lora
 
 load_dotenv()
@@ -25,6 +26,7 @@ if __name__ == "__main__":
     print("Gas sensor ready [OK]")
     loudness_sensor = sensors.LoudnessSensor(LOUDNESS_SENSOR_CHANEEL)
     print("Loudness sensor ready [OK]")
+    gps_sensor = gps.GPS()
 
     try:
         while True:
@@ -37,7 +39,7 @@ if __name__ == "__main__":
             loudness = loudness_sensor.value
             print(f"Loudness: {loudness}")
 
-            latitude, longitude = (None, None)  # todo: get gps data (lon,lat)
+            latitude, longitude = gps_sensor.value
             print(f"GPS: {(latitude, longitude)}")
             print("All data got from sensors [OK]")
             sensor_data = {
