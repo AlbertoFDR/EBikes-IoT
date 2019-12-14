@@ -1,6 +1,6 @@
-from ebikes.utils.protocol import load_data_sensor
-from ebikes.utils.lora.lora import LoraEndpoint
-from ebikes.utils.storage import Storage
+from ebikes.protocol import load_data_sensor
+from ebikes.lora.lora import LoraEndpoint
+from ebikes.storage import Storage
 import os
 
 STORAGE_HOST = os.getenv("STORAGE_HOST")

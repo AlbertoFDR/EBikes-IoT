@@ -3,10 +3,9 @@ import time
 
 from dotenv import load_dotenv
 
-from ebikes.utils import protocol as prot
-from ebikes.utils import sensors
-from ebikes.utils.fake_gps import gps
-from ebikes.utils.lora import lora
+from ebikes import sensors, protocol as prot
+from ebikes.fake_gps import gps
+from ebikes.lora import lora
 
 load_dotenv()
 
