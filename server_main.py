@@ -3,6 +3,9 @@ from ebikes.lora.lora import LoraEndpoint
 from ebikes.storage import Storage
 import os
 
+from dotenv import load_dotenv
+load_dotenv()
+
 STORAGE_HOST = os.getenv("STORAGE_HOST")
 STORAGE_PORT = int(os.getenv("STORAGE_PORT"))
 STORAGE_USERNAME = os.getenv("STORAGE_USERNAME")

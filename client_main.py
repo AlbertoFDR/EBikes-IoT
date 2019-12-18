@@ -2,12 +2,12 @@ import os
 import time
 
 from dotenv import load_dotenv
+load_dotenv()
 
 from ebikes import sensors, protocol as prot
 from ebikes.fake_gps import gps
 from ebikes.lora import lora
 
-load_dotenv()
 
 SAMPLING_FREQUENCY = int(os.getenv("SAMPLING_FREQUENCY"))
 

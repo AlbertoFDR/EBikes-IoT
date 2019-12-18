@@ -19,7 +19,7 @@ class LoraEndpoint:
             self.ll.setTxPower(tx_power)
 
     def read(self) -> bytes:
-        if self.ll.waitRX(timeout=3):
+        if self.ll.waitRX():
             data = self.ll.recv()
             # header = data[0:4]
             msg = data[4:]
