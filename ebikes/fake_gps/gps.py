@@ -17,7 +17,7 @@ class GPS:
 
     @property
     def value(self):
-        if self.index >= len(self.data):
+        if self.index >= len(self.data)-1:
             self.index = self.index = 0
         else:
             self.index += 1

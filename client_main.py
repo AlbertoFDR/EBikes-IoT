@@ -33,7 +33,7 @@ if __name__ == "__main__":
             humidity, temperature = weather_sensor.value
             print(f"Humidty: {humidity}")
             print(f"Temperature: {temperature}")
-            gas = gas_sensor.value
+            gas = sensors.calculate_gas_percent(gas_sensor.value)
             print(f"Gas: {gas}")
             loudness = loudness_sensor.value
             print(f"Loudness: {loudness}")
