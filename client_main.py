@@ -27,8 +27,9 @@ if __name__ == "__main__":
     print("Loudness sensor ready [OK]")
     gps_sensor = gps.GPS()
 
-    try:
-        while True:
+
+    while True:
+        try:
             print("Getting data from sensors...")
             humidity, temperature = weather_sensor.value
             print(f"Humidty: {humidity}")
@@ -57,5 +58,5 @@ if __name__ == "__main__":
 
             print(f"Sleeping {SAMPLING_FREQUENCY} seconds...")
             time.sleep(SAMPLING_FREQUENCY)
-    except:
-        print("Ebikes Client exit.")
+        except:
+            pass

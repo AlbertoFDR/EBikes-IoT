@@ -14,8 +14,8 @@ if __name__ == "__main__":
     print("==================== CLIENT EBIKES ===================== \n")
     lora = LoraEndpoint()
     storage = Storage(STORAGE_HOST, STORAGE_PORT, STORAGE_USERNAME)
-    try:
-        while True:
+    while True:
+        try:
             print("Waiting to receive a message...")
             encoded_data = lora.read()
             print(f"Encoded data received: {encoded_data}")
@@ -23,7 +23,6 @@ if __name__ == "__main__":
             print("Data stored!")
             storage.store_data(decoded_data)
             print("Data saved")
-    except:
-        storage.close()
-        print("Ebikes Server exit.")
+        except:
+            pass
 
