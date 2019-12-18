@@ -37,7 +37,7 @@ class GasSensorMQ2:
     def value(self):
         return self.adc.read(self.channel)
 
-def calculate_gas_percent(gas_value):
+def calculate_gas_ratio(gas_value):
     sensor_volt = gas_value/1024*5.0
     RS_gas = (5.0-sensor_volt)/sensor_volt
     ratio = RS_gas/CLEAN_AIR
