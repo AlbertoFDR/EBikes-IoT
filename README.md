@@ -64,4 +64,4 @@ As a central server where the dashboard will be deployed, a common laptop will b
 
 ### Communication technologies used to send data
 The technology used to make the connection between the weather stations and the LoraWan server will be. This technology is used for low consumption and wide area networks (range greater than 10 kilometers). To use this technology, a LoraWan module is necessary.
-![Lora](images/lora-alliance-logo.png)
+![Lora](images/lora.jpg)
