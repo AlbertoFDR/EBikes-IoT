@@ -10,7 +10,7 @@ Finally, a web application will be made available to the BilbaoBizi entity that 
 
 ## Code
 The code of the project is in the folder [ebikes](ebikes):
-- [storage.py](ebikes/storage.py): module for sending data from the weather station to the remote dashboard.
+- [storage.py](ebikes/storage.py): module for sending data from the weather station to the remote dashboard. It uses the MQTT protocol.
 - [sensors.py](ebikes/sensors.py): module for using all the Gas/Loudness/Temperature/Humidty sensors. We have abstract them into classes.
 - [protocol.py](ebikes/protocol.py): module for defining how the data is sent and parsed between the data-collector and the weather station.
 - [lora](ebikes/lora): package containing all the lora related modules
